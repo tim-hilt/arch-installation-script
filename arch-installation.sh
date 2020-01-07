@@ -30,7 +30,6 @@ pacman -S --noconfirm \
     bat \
     fd \
     ripgrep \
-    yadm \
     tar \
     clang \
     shellcheck \
@@ -76,7 +75,8 @@ pacman -S --noconfirm \
 #     emacs-git-shallow \
 #     balena-etcher \
 #     spotify \
-#     insync
+#     insync \
+#     yadm \
 
 useradd -m tim
 passwd tim
