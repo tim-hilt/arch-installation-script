@@ -1,0 +1,57 @@
+* Arch-Linux-Installation-Script
+
+This repository contains a Bash-Script that helps to replicate my current setup.
+This document shall describe the preliminaries and post-installation-operations
+that shall be executed, in order to replicate my setup.
+
+* Preliminaries
+
+In order to run the script, first the disk has to be partitioned, the
+base-groups have to be installed and the ~chroot~-environment has to be entered:
+
+#+BEGIN_SRC shell
+cfdisk
+mkfs.ext4 /dev/sda1  # Replace with your drive
+mount /dev/sda1 /mnt
+wifi-menu  # Connect to wifi
+pacstrap /mnt base base-devel linux linux-firmware vim
+genfstab -Up /mnt > /mnt/etc/fstab
+arch-chroot /mnt
+#+END_SRC
+
+Before you actually run the script you should check if everything matches your needs.
+
+* Running the script
+
+To run the script enter:
+
+#+BEGIN_SRC shell
+pacman -S git
+git clone https://github.com/tim-hilt/arch-installation-script
+cd arch-installation-script
+./arch-installation.sh
+#+END_SRC
+
+And watch the magic happen. You will be prompted to enter a password every now
+and then.
+
+* Post-Installation
+
+I use the fish-shell instead of bash or any other shell. To change the default
+shell to fish run:
+
+#+BEGIN_SRC shell
+chsh -s $(which fish)
+#+END_SRC
+
+after a reboot.
+
+[ Anything else here? ]
+
+* Not Yet Implemented
+
+- [ ] Set up Audio
+- [ ] Set up AUR
+- [ ] Cups for printing
+- [ ] Doom-Emacs together with personal config
+- [ ] Dotfiles

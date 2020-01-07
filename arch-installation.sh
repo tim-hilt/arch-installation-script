@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 #
 # This is an installation-script for my personal Arch-Linux setup.
-# Wishlist:
-# - Audio
-# - Install AUR-wrapper
-# - make everything promptless
 
 echo arch > /etc/hostname
 echo LANG=en_US.UTF-8 > /etc/locale.conf
