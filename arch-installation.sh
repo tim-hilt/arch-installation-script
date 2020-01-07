@@ -68,15 +68,15 @@ pacman -S --noconfirm \
     virsh \
     virt-manager
 
-git clone https://aur.archlinux.org/yay.git
-cd yay || exit
-makepkg -si
+# git clone https://aur.archlinux.org/yay.git
+# cd yay || exit
+# makepkg -si
 
-yay -S --noconfirm \
-    emacs-git-shallow \
-    balena-etcher \
-    spotify \
-    insync
+# yay -S --noconfirm \
+#     emacs-git-shallow \
+#     balena-etcher \
+#     spotify \
+#     insync
 
 useradd -m tim
 passwd tim
