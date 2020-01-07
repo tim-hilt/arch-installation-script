@@ -65,7 +65,7 @@ pacman -S --noconfirm \
     networkmanager \
     qemu \
     libvirt \
-    virsh \
+    # virsh \
     virt-manager
 
 # git clone https://aur.archlinux.org/yay.git
