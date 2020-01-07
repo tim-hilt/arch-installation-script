@@ -103,5 +103,5 @@ mkdir build
 cd build || exit
 cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 make
-sudo make install
+make install
 cd / || exit
