@@ -31,6 +31,9 @@ pacman -S --noconfirm \
     fd \
     ripgrep \
     yadm \
+    tar \
+    clang \
+    shellcheck \
     cups \
     gparted \
     vim \
@@ -60,6 +63,15 @@ pacman -S --noconfirm \
     qt5 \
     texlive-full \
     networkmanager
+
+git clone https://aur.archlinux.org/yay.git
+cd yay || exit
+makepkg -si
+
+yay -S --noconfirm \
+    emacs-git-shallow \
+    balena-etcher \
+    spotify
 
 useradd -m tim
 passwd tim

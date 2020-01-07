@@ -49,13 +49,21 @@ chsh -s $(which fish)
 
 after a ~reboot~.
 
+Also Doom-Emacs shall be installed on top of the existing
+Emacs-Git-Installation:
+
+#+BEGIN_SRC shell
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+#+END_SRC
+
 # TODO: Anything else here?
 
 * Not Yet Implemented
 
 - [X] Set up Audio
 - [X] Cups for printing
-- [ ] Set up AUR
-- [ ] Doom-Emacs together with personal config
+- [X] Set up AUR
+- [X] Doom-Emacs together with personal config
 - [ ] dwm with libs (Renders the ~echo~ to ~.xinitrc~ pointless)
 - [ ] Dotfiles
