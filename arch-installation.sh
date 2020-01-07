@@ -37,7 +37,7 @@ pacman -S --noconfirm \
     cups \
     gparted \
     vim \
-    nvim \
+    neovim \
     julia \
     python-pandas \
     python-numpy \
@@ -61,8 +61,12 @@ pacman -S --noconfirm \
     cmake \
     extra-cmake-modules \
     qt5 \
-    texlive-full \
-    networkmanager
+    texlive-most \
+    networkmanager \
+    qemu \
+    libvirt \
+    virsh \
+    virt-manager
 
 git clone https://aur.archlinux.org/yay.git
 cd yay || exit
@@ -71,7 +75,8 @@ makepkg -si
 yay -S --noconfirm \
     emacs-git-shallow \
     balena-etcher \
-    spotify
+    spotify \
+    insync
 
 useradd -m tim
 passwd tim
