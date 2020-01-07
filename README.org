@@ -4,6 +4,9 @@ This repository contains a Bash-Script that helps to replicate my current setup.
 This document shall describe the preliminaries and post-installation-operations
 that shall be executed, in order to replicate my setup.
 
+I use KDE as my desktop-environment / window-manager and keep a dwm-installation
+around in case i feel the need to invent something.
+
 * Preliminaries
 
 In order to run the script, first the disk has to be partitioned, the
@@ -37,21 +40,22 @@ and then.
 
 * Post-Installation
 
-I use the fish-shell instead of bash or any other shell. To change the default
-shell to fish run:
+I use the ~fish~-shell instead of ~bash~ or any other shell. To change the default
+shell to ~fish~ run:
 
 #+BEGIN_SRC shell
 chsh -s $(which fish)
 #+END_SRC
 
-after a reboot.
+after a ~reboot~.
 
-[ Anything else here? ]
+# TODO: Anything else here?
 
 * Not Yet Implemented
 
-- [ ] Set up Audio
+- [X] Set up Audio
+- [X] Cups for printing
 - [ ] Set up AUR
-- [ ] Cups for printing
 - [ ] Doom-Emacs together with personal config
+- [ ] dwm with libs (Renders the ~echo~ to ~.xinitrc~ pointless)
 - [ ] Dotfiles

@@ -21,6 +21,7 @@ pacman -S --noconfirm \
     xorg \
     xorg-xinit \
     xf86-video-intel \
+    alsa-utils \
     fish \
     ranger \
     htop \
@@ -30,6 +31,7 @@ pacman -S --noconfirm \
     fd \
     ripgrep \
     yadm \
+    cups \
     gparted \
     vim \
     nvim \
@@ -69,6 +71,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl start NetworkManager
 systemctl enable NetworkManager
+systemctl start bluetooth
+systemctl enable bluetooth
+systemctl start org.cups.cupsd
+systemctl enable org.cups.cupsd
 
 echo 'exec startplasma-x11' > /home/tim/.xinitrc
 
