@@ -1,8 +1,16 @@
+#+TITLE: README for Arch Linux Installation-Script
+#+AUTHOR: Tim Hilt
+#+DATE: 2020-12-07
+#+STARTUP: showeverything
+
 * Arch-Linux-Installation-Script
 
 This repository contains a Bash-Script that helps to replicate my current setup.
 This document shall describe the preliminaries and post-installation-operations
 that shall be executed, in order to replicate my setup.
+
+The script is split into ~install.sh~ and ~post-install.sh~. The script itself
+is optimized for being compatible with ~shellcheck~ and optimized for line- and operation-count.
 
 I use KDE as my desktop-environment / window-manager and keep a dwm-installation
 around in case i feel the need to invent something.

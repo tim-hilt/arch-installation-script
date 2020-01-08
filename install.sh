@@ -2,7 +2,7 @@
 #
 # This is an installation-script for my personal Arch-Linux setup.
 
-USER=tim
+USERNAME=tim
 
 echo arch > /etc/hostname
 echo LANG=en_US.UTF-8 > /etc/locale.conf
@@ -16,11 +16,15 @@ locale-gen
 
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
+# Make initramfs
+echo -e "\nMake initramfs..."
 mkinitcpio -p linux
-echo "Set root-password:"
+
+echo -e "\nSet root-password:"
 passwd
 
 # Install packages
+echo -e "\nInstalling packages..."
 pacman -S --noconfirm \
     grub \
     xorg \
@@ -74,9 +78,11 @@ pacman -S --noconfirm \
     # virsh \
     virt-manager
 
-useradd -m $USER
-echo "Enter password for user $USER"
-passwd tim
+# Make User
+echo -e "\nAdd user..."
+useradd -m $USERNAME
+echo -e "\nEnter password for user $USERNAME"
+passwd $USERNAME
 usermod -aG wheel,audio,video,optical,storage tim
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL(ALL)= ALL/' /etc/sudoers
 
@@ -85,6 +91,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 echo 'exec startplasma-x11' > /home/tim/.xinitrc
 
+# Install hello-theme for KDE
+echo -e "\nInstall hello KDE theme"
 mkdir /home/tim/git/
 cd /home/tim/git/ || exit
 git clone https://github.com/n4n0GH/hello
