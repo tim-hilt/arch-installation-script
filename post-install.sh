@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #
-# Post-Installation script
+# Post-Installation-Script
+
+USERNAME=tim
 
 # Enable systemd-services
 echo -e "\nEnabling systemd-services..."
@@ -15,11 +17,14 @@ systemctl enable org.cups.cupsd
 echo -e "\nSwitching default shell to fish..."
 chsh -s "$(command -v fish)"
 
+mkdir /home/"$USERNAME"/git/
+
 # Setting up AUR
 echo -e "\nSetting up AUR..."
-git clone https://aur.archlinux.org/yay.git
-cd yay || exit
+git clone https://aur.archlinux.org/yay.git /home/"$USERNAME"/git/yay/
+cd /home/"$USERNAME"/yay || exit 1
 makepkg -si
+cd || exit 1
 
 # Install AUR-packages
 echo -e "\nInstalling AUR-packages..."
@@ -39,13 +44,11 @@ git clone https://github.com/tim-hilt/.doom.d ~/.doom.d/
 
 # Install hello-theme for KDE
 echo -e "\nInstall hello KDE theme"
-mkdir /home/tim/git/
-cd /home/tim/git/ || exit
-git clone https://github.com/n4n0GH/hello
-cd hello || exit
-mkdir build
-cd build || exit
+git clone https://github.com/n4n0GH/hello /home/"$USERNAME"/git/hello/
+cd /home/"$USERNAME"/git/hello/ || exit 1
+mkdir ./build
+cd ./build/ || exit 1
 cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 make
-make install
-cd / || exit
+sudo make install
+cd || exit 1

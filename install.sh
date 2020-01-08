@@ -17,7 +17,7 @@ locale-gen
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 # Make initramfs
-echo -e "\nMake initramfs..."
+echo -e "\nBuilding initramfs..."
 mkinitcpio -p linux
 
 echo -e "\nSet root-password:"
@@ -84,7 +84,7 @@ pacman -S --noconfirm \
 # Make User
 echo -e "\nAdd user..."
 useradd -m $USERNAME
-echo -e "\nEnter password for user $USERNAME"
+echo -e "\nEnter password for user {$USERNAME}:"
 passwd $USERNAME
 usermod -aG wheel,audio,video,optical,storage tim
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL(ALL)= ALL/' /etc/sudoers
@@ -93,3 +93,5 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo 'exec startplasma-x11' > /home/tim/.xinitrc
+
+exit 0
