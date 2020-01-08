@@ -52,14 +52,15 @@ After a reboot you can run ~./post-install.sh~.
 
 # TODO: Anything else here?
 
-* Not Yet Implemented
+* Roadmap
 
+- [ ] Clean up mirrorlist
+- [ ] Make infomessages colorful
+- [ ] dwm with libs (Renders the ~echo~ to ~.xinitrc~ pointless)
+- [ ] Dotfiles
 - [X] Set up Audio
 - [X] Cups for printing
 - [X] Set up AUR
 - [X] Doom-Emacs together with personal config
-- [ ] Clean up mirrorlist
-- [ ] Split into two scripts: Installation and Post-Installation
-- [ ] Show info-messages
-- [ ] dwm with libs (Renders the ~echo~ to ~.xinitrc~ pointless)
-- [ ] Dotfiles
+- [X] Split into two scripts: Installation and Post-Installation
+- [X] Show info-messages

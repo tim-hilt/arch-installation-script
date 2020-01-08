@@ -52,8 +52,10 @@ pacman -S --noconfirm \
     python-matplotlib \
     python-scikit-learn \
     python-scipy \
-    python-jupyter \
-    python-jupyterlab \
+    jupyter \
+    python-jupyter_core \
+    python-jupyter_client \
+    jupyterlab \
     zathura \
     libreoffice-fresh \
     firefox \
