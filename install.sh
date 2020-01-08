@@ -2,11 +2,14 @@
 #
 # This is an installation-script for my personal Arch-Linux setup.
 
+USER=tim
+
 echo arch > /etc/hostname
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 echo KEYMAP=de-latin1 > /etc/vconsole.conf
 echo FONT=lat9w-16 >> /etc/vconsole.conf
 
+# Generate locales
 sed -i 's/#de_DE.UTF-8/de_DE.UTF-8/' /etc/locale.gen
 sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
 locale-gen
@@ -14,8 +17,10 @@ locale-gen
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 mkinitcpio -p linux
+echo "Set root-password:"
 passwd
 
+# Install packages
 pacman -S --noconfirm \
     grub \
     xorg \
@@ -67,31 +72,14 @@ pacman -S --noconfirm \
     # virsh \
     virt-manager
 
-# git clone https://aur.archlinux.org/yay.git
-# cd yay || exit
-# makepkg -si
-
-# yay -S --noconfirm \
-#     emacs-git-shallow \
-#     balena-etcher \
-#     spotify \
-#     insync \
-#     yadm \
-
-useradd -m tim
+useradd -m $USER
+echo "Enter password for user $USER"
 passwd tim
 usermod -aG wheel,audio,video,optical,storage tim
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL(ALL)= ALL/' /etc/sudoers
 
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-
-systemctl start NetworkManager
-systemctl enable NetworkManager
-systemctl start bluetooth
-systemctl enable bluetooth
-systemctl start org.cups.cupsd
-systemctl enable org.cups.cupsd
 
 echo 'exec startplasma-x11' > /home/tim/.xinitrc
 

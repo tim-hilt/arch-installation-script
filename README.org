@@ -65,6 +65,8 @@ git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
 - [X] Cups for printing
 - [X] Set up AUR
 - [X] Doom-Emacs together with personal config
-- [ ] Implement verbose feedback
+- [ ] Clean up mirrorlist
+- [ ] Split into two scripts: Installation and Post-Installation
+- [ ] Show info-messages
 - [ ] dwm with libs (Renders the ~echo~ to ~.xinitrc~ pointless)
 - [ ] Dotfiles
