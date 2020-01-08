@@ -64,6 +64,7 @@ pacman -S --noconfirm \
     plasma \
     kcolorchooser \
     okular \
+    dolphin \
     spectacle \
     gwenview \
     kdeconnect \
@@ -92,16 +93,3 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo 'exec startplasma-x11' > /home/tim/.xinitrc
-
-# Install hello-theme for KDE
-echo -e "\nInstall hello KDE theme"
-mkdir /home/tim/git/
-cd /home/tim/git/ || exit
-git clone https://github.com/n4n0GH/hello
-cd hello || exit
-mkdir build
-cd build || exit
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-make
-make install
-cd / || exit

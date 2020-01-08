@@ -31,8 +31,21 @@ yay -S --noconfirm \
     yadm
 
  # Install Doom-Emacs
- echo -e "\nInstall doom-emacs"
+echo -e "\nInstall doom-emacs"
 git clone https://github.com/hlissner/doom-emacs ~/.emacs.d/
 ~/.emacs.d/bin/doom install
 rm -rf ~/.doom.d/
 git clone https://github.com/tim-hilt/.doom.d ~/.doom.d/
+
+# Install hello-theme for KDE
+echo -e "\nInstall hello KDE theme"
+mkdir /home/tim/git/
+cd /home/tim/git/ || exit
+git clone https://github.com/n4n0GH/hello
+cd hello || exit
+mkdir build
+cd build || exit
+cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+make
+make install
+cd / || exit
