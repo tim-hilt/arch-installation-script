@@ -32,7 +32,7 @@ To run the script enter:
 pacman -S git
 git clone https://github.com/tim-hilt/arch-installation-script
 cd arch-installation-script
-./arch-installation.sh
+./install.sh
 #+END_SRC
 
 And watch the magic happen. You will be prompted to enter a password every now
@@ -40,22 +40,7 @@ and then.
 
 * Post-Installation
 
-I use the ~fish~-shell instead of ~bash~ or any other shell. To change the default
-shell to ~fish~ run:
-
-#+BEGIN_SRC shell
-chsh -s $(which fish)
-#+END_SRC
-
-after a ~reboot~.
-
-Also Doom-Emacs shall be installed on top of the existing
-Emacs-Git-Installation:
-
-#+BEGIN_SRC shell
-git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-#+END_SRC
+After a reboot you can run ~./post-install.sh~.
 
 # TODO: Anything else here?
 

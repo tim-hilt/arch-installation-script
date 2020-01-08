@@ -48,6 +48,8 @@ pacman -S --noconfirm \
     python-matplotlib \
     python-scikit-learn \
     python-scipy \
+    python-jupyter \
+    python-jupyterlab \
     zathura \
     libreoffice-fresh \
     firefox \
